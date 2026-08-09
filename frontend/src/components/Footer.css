@@ -1,0 +1,44 @@
+.footer {
+  border-top: 1px solid var(--border-glass);
+  padding: 2rem 0;
+  margin-top: auto;
+  background: rgba(11, 17, 32, 0.6);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-brand strong {
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.footer-brand p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-note {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  max-width: 640px;
+}
