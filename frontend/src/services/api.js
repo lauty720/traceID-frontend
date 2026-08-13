@@ -1,3 +1,5 @@
+import { getToken } from './auth'
+
 const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
 
 async function wakeBackend() {
@@ -25,11 +27,16 @@ export async function analyzeImage(file, demo = false) {
   const ctrl = new AbortController()
   const timer = setTimeout(() => ctrl.abort(), 90000)
 
+  const headers = {}
+  const token = getToken()
+  if (token) headers.Authorization = `Bearer ${token}`
+
   try {
     const res = await fetch(url, {
       method: 'POST',
       body: form,
       signal: ctrl.signal,
+      headers,
     })
 
     if (!res.ok) {
