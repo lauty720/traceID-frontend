@@ -8,6 +8,7 @@ import HowItWorks from './pages/HowItWorks'
 import Ethics from './pages/Ethics'
 import About from './pages/About'
 import Privacy from './pages/Privacy'
+import Login from './pages/Login'
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/etica" element={<Ethics />} />
           <Route path="/privacidad" element={<Privacy />} />
           <Route path="/sobre" element={<About />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       <Footer />
