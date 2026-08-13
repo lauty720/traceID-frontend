@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Upload, Image as ImageIcon, Shield, Search, Fingerprint, Play } from 'lucide-react'
+import { getToken } from '../services/auth'
 import './Home.css'
 
 const ALLOWED = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp']
@@ -39,8 +40,10 @@ export default function Home() {
 
   const onAnalyze = () => {
     if (!file) return
-    // Pass file via sessionStorage as base64 is heavy; use object URL + name
-    // Better: navigate with state
+    if (!getToken()) {
+      navigate('/login')
+      return
+    }
     navigate('/analisis', { state: { file, preview, demo: false } })
   }
 
