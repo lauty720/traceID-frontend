@@ -1,47 +1,60 @@
 .results-page {
-  padding: 2.5rem 0 4rem;
+  padding: 40px 0 56px;
 }
 
 .results-page h1 {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  margin-bottom: 0.35rem;
+  margin-bottom: 6px;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
-  margin-top: 1.75rem;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+@media (min-width: 640px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .results-card {
-  padding: 1.35rem 1.25rem;
+  padding: 20px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
 }
 
 .results-card h2 {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  margin-bottom: 0.65rem;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .results-card p,
 .results-card li {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.9rem;
+  font-size: 14px;
   line-height: 1.55;
+  color: var(--text-secondary);
 }
 
 .results-score {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  line-height: 1;
-  margin: 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 8px 0;
+  color: var(--text);
 }
 
 .results-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 2rem;
+  gap: 10px;
+  margin-top: 24px;
 }

@@ -1,50 +1,53 @@
 .static-page {
-  padding: 3rem 0 4rem;
+  padding: 40px 0 56px;
 }
 
 .static-header {
-  margin-bottom: 2rem;
-  max-width: 40rem;
+  margin-bottom: 28px;
+  max-width: 36rem;
 }
 
 .static-header h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  line-height: 1.05;
-  margin-bottom: 0.85rem;
-  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .static-header h1 {
+    font-size: 1.75rem;
+  }
 }
 
 .static-header p {
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 300;
-  font-size: 1rem;
+  font-size: 15px;
   line-height: 1.65;
+  color: var(--text-secondary);
 }
 
 .static-card {
-  padding: 1.75rem 1.5rem;
-  margin-bottom: 1.25rem;
+  padding: 20px 20px;
+  margin-bottom: 12px;
 }
 
 .static-card h2 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  margin-bottom: 0.65rem;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .static-card p,
 .static-card li {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 .static-card ul {
-  padding-left: 1.15rem;
-  margin-top: 0.5rem;
+  padding-left: 18px;
+  margin-top: 8px;
 }
 
 .static-card li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 4px;
 }
