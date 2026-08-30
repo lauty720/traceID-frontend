@@ -10,7 +10,7 @@ function CircularProgress({ value, size = 120 }) {
   const radius = (size - 12) / 2
   const circ = 2 * Math.PI * radius
   const offset = circ - (value / 100) * circ
-  const color = value >= 70 ? 'var(--danger)' : value >= 40 ? 'var(--warning)' : 'var(--success)'
+  const color = '#60a5fa'  // neutro: un solo azul, sin semáforo agresivo
 
   return (
     <svg width={size} height={size} className="circular-progress">

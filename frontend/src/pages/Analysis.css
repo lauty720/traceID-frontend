@@ -1,17 +1,182 @@
-.analysis-page { padding: 56px 0 96px; }
-.analysis-page h1 { font-size: 1.6rem; margin-bottom: 12px; letter-spacing: -0.03em; }
-.analysis-steps { display: flex; flex-direction: column; gap: 12px; margin: 28px 0; }
-.analysis-step {
-  display: flex; align-items: center; gap: 14px;
-  padding: 16px 18px; background: var(--bg-elevated);
-  border: 1px solid var(--border); border-radius: var(--radius);
-  transition: border-color 0.25s, background 0.25s;
+/* Flujo de análisis: aire, calma, animaciones suaves */
+
+.analysis-page {
+  padding: 64px 0 100px;
+  min-height: calc(100vh - var(--header-h, 64px) - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.analysis-step.active { border-color: var(--accent); background: var(--accent-soft); }
-.analysis-step.done { opacity: 0.6; }
-.analysis-step .num { font-size: 13px; font-weight: 600; color: var(--text-muted); min-width: 28px; }
-.analysis-step.active .num { color: var(--accent); }
-.analysis-preview {
-  max-width: 300px; margin-bottom: 24px; border-radius: var(--radius-sm);
-  overflow: hidden; border: 1px solid var(--border); background: #000;
+
+.analysis-card {
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px 36px 44px;
+  animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (max-width: 600px) {
+  .analysis-page {
+    padding: 40px 0 80px;
+  }
+  .analysis-card {
+    padding: 28px 20px 32px;
+  }
+}
+
+.analysis-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.analysis-header .spinner {
+  color: var(--accent, #3b82f6);
+  margin: 0 auto 20px;
+  display: block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.analysis-header h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+  color: var(--text, #fafafa);
+}
+
+.analysis-header p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted, #71717a);
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+/* Stages */
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stage {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border, #27272a);
+  background: rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  opacity: 0.4;
+  transform: translateY(6px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.stage.active {
+  opacity: 1;
+  transform: translateY(0);
+  border-color: var(--border-hover, #3f3f46);
+  background: var(--bg-elevated, #111113);
+}
+
+.stage.current {
+  border-color: rgba(59, 130, 246, 0.45);
+  background: rgba(59, 130, 246, 0.06);
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.08);
+}
+
+.stage-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted, #71717a);
+  transition: color 0.35s ease, background 0.35s ease;
+}
+
+.stage.active .stage-icon {
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.stage-text {
+  flex: 1;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.stage-text h3 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  color: var(--text-muted, #71717a);
+  transition: color 0.35s ease;
+}
+
+.stage.active .stage-text h3 {
+  color: var(--text, #fafafa);
+}
+
+.stage-text p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted, #71717a);
+  margin: 0;
+}
+
+.stage.active .stage-text p {
+  color: var(--text-secondary, #a1a1aa);
+}
+
+/* Soft pulse — no flash de color agresivo */
+.stage-pulse {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.06),
+    transparent
+  );
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.error-card {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.error-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.error-card p {
+  margin-bottom: 24px;
+  color: var(--text-secondary, #a1a1aa);
+  line-height: 1.6;
 }
