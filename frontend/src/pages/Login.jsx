@@ -35,7 +35,7 @@ export default function Login() {
       <header className="static-header">
         <h1>{mode === 'login' ? 'Iniciar sesión' : 'Crear cuenta'}</h1>
         <p>
-          Cada cuenta tiene <strong>6 análisis por día</strong>.
+          Cada cuenta tiene <strong>10 análisis por día</strong>.
           Así repartimos el cupo de búsquedas de la herramienta.
         </p>
       </header>
