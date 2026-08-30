@@ -7,7 +7,7 @@ export default function DonationBar() {
     <div className="donation-bar">
       <div className="container donation-bar-inner">
         <p className="donation-bar-text">
-          TraceID es un proyecto educativo independiente. Si te sirve, podés apoyar con una donación.
+          TraceID es un proyecto que esta constantemente en producción. Si te sirve, podés apoyar con una donación para que este proyecto siga creciendo más rápido.
         </p>
         <a
           className="donation-bar-btn"
