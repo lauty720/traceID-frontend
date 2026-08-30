@@ -1,0 +1,55 @@
+.donation-bar {
+  position: relative;
+  z-index: 60;
+  background: #111113;
+  border-bottom: 1px solid #27272a;
+  padding: 10px 0;
+}
+
+.donation-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+}
+
+.donation-bar-text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #a1a1aa;
+  flex: 1;
+  min-width: 200px;
+}
+
+.donation-bar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 34px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #09090b !important;
+  background: #fafafa;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: opacity 0.15s ease, transform 0.2s ease;
+}
+
+.donation-bar-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  color: #09090b !important;
+}
+
+@media (max-width: 600px) {
+  .donation-bar-text {
+    font-size: 12.5px;
+  }
+  .donation-bar-inner {
+    gap: 10px;
+  }
+}
