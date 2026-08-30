@@ -12,7 +12,7 @@ export default function Navbar() {
   useEffect(() => {
     fetchMe().then((u) => {
       if (u) setUser(u)
-    })
+    }).catch(() => {})
   }, [])
 
   const logout = () => {
@@ -38,10 +38,13 @@ export default function Navbar() {
           <NavLink to="/como-funciona" onClick={() => setOpen(false)}>Cómo funciona</NavLink>
           <NavLink to="/etica" onClick={() => setOpen(false)}>Ética</NavLink>
           <NavLink to="/sobre" onClick={() => setOpen(false)}>Sobre el proyecto</NavLink>
+          {user?.is_admin && (
+            <NavLink to="/admin" onClick={() => setOpen(false)}>Admin</NavLink>
+          )}
           {user ? (
             <>
               <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                {user.used_today ?? 0}/{user.daily_limit ?? 6} hoy
+                {user.is_admin ? '∞' : `${user.used_today ?? 0}/${user.daily_limit ?? 6}`} hoy
               </span>
               <button type="button" className="btn btn-ghost" onClick={logout}>
                 Salir
