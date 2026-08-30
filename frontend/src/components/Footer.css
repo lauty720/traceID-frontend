@@ -1,23 +1,24 @@
 .footer {
   margin-top: auto;
-  padding: 2.5rem 0 2rem;
+  padding: 2.25rem 0 1.75rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(10, 10, 12, 0.4);
+  background: transparent;
 }
 
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 1.1rem;
   justify-content: space-between;
   align-items: center;
 }
 
 .footer p,
 .footer a {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
   letter-spacing: 0.03em;
+  transition: color 0.25s;
 }
 
 .footer a:hover {
@@ -27,5 +28,5 @@
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
