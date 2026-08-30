@@ -7,8 +7,8 @@ export default function Ethics() {
       <header className="static-header">
         <h1>Ética y privacidad</h1>
         <p>
-          TraceID fue diseñado como herramienta educativa. Su propósito es enseñar
-          sobre huella digital pública, no investigar personas.
+          TraceID fue diseñado como una herramienta que aumente tu seguridad digital
+          en tiempos donde es complejo saber si un perfil es real o no
         </p>
       </header>
 
