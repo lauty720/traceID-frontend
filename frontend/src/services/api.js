@@ -57,7 +57,7 @@ export async function analyzeImage(file, demo = false) {
     }
     if (err.message === 'Failed to fetch' || err.name === 'TypeError') {
       throw new Error(
-        'No se pudo conectar con el servidor. Esperá 10 segundos y reintentá (el servidor gratis a veces se reinicia).'
+        'No se pudo conectar con el servidor. Volvé al menú principal, reninicia la pagina y reintentá.'
       )
     }
     throw err
