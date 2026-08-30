@@ -1,22 +1,26 @@
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 40;
+  z-index: 50;
   height: var(--header-h);
-  background: rgba(12, 15, 20, 0.92);
-  border-bottom: 1px solid var(--border-subtle);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  background: rgba(11, 14, 19, 0.85);
+  border-bottom: 1px solid var(--border-soft);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: fadeIn 0.4s ease both;
 }
 
 .navbar .container {
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
+  width: 100%;
 }
 
+/* Centro visual: logo izq, links centrados en desktop, acciones der */
 .navbar-inner {
   display: contents;
 }
@@ -24,91 +28,106 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: var(--text) !important;
   text-decoration: none !important;
   font-weight: 600;
   font-size: 15px;
   flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.85;
+  text-decoration: none !important;
 }
 
 .logo span {
   font-family: var(--font);
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .logo svg {
   color: var(--accent);
-  flex-shrink: 0;
 }
 
 .nav-toggle {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   color: var(--text-secondary);
   border-radius: var(--radius);
   border: 1px solid var(--border);
+  transition: background 0.2s, color 0.2s;
 }
 
 .nav-toggle:hover {
-  background: var(--bg-muted);
+  background: var(--bg-soft);
   color: var(--text);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .nav-links a {
   color: var(--text-secondary) !important;
   text-decoration: none !important;
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 500;
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: var(--radius);
+  transition: color 0.2s ease, background 0.2s ease, transform 0.25s var(--ease);
 }
 
 .nav-links a:hover {
   color: var(--text) !important;
-  background: var(--bg-muted);
+  background: var(--bg-soft);
+  transform: translateY(-1px);
 }
 
 .nav-links a.active {
   color: var(--text) !important;
-  background: var(--bg-muted);
-}
-
-.nav-links .btn-ghost {
-  font-size: 13px;
-  font-weight: 500;
+  background: var(--bg-soft);
 }
 
 .nav-quota {
   font-size: 12px;
   color: var(--text-muted);
-  padding: 0 6px;
+  padding: 0 8px;
   font-variant-numeric: tabular-nums;
 }
 
 .nav-login {
   background: var(--accent) !important;
   color: #fff !important;
-  padding: 6px 12px !important;
+  padding: 8px 14px !important;
+  margin-left: 4px;
+  box-shadow: 0 2px 12px rgba(79, 140, 255, 0.25);
+  transition: background 0.2s, transform 0.2s var(--ease) !important;
 }
 
 .nav-login:hover {
   background: var(--accent-hover) !important;
   color: #fff !important;
+  transform: translateY(-1px);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 900px) {
+  /* Empuja los links hacia un bloque más centrado */
+  .nav-links {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 800px) {
   .nav-toggle {
     display: inline-flex;
   }
@@ -121,10 +140,11 @@
     right: 0;
     flex-direction: column;
     align-items: stretch;
-    gap: 0;
-    padding: 8px;
+    gap: 2px;
+    padding: 12px 16px 16px;
     background: var(--bg-elevated);
     border-bottom: 1px solid var(--border);
+    animation: fadeUp 0.3s var(--ease) both;
   }
 
   .nav-links.open {
@@ -132,13 +152,13 @@
   }
 
   .nav-links a,
-  .nav-links .btn-ghost,
-  .nav-links .nav-quota {
+  .nav-links .btn-ghost {
     padding: 12px 14px;
-    border-radius: var(--radius);
   }
 
-  .nav-quota {
-    display: block;
+  .nav-login {
+    margin-left: 0;
+    text-align: center;
+    justify-content: center;
   }
 }

@@ -30,7 +30,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container">
         <Link to="/" className="logo" onClick={close}>
-          <Fingerprint size={20} strokeWidth={2} />
+          <Fingerprint size={22} strokeWidth={2} />
           <span>TraceID</span>
         </Link>
 

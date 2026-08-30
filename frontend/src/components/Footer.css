@@ -1,13 +1,13 @@
 .footer {
   margin-top: auto;
-  padding: 24px 0;
-  border-top: 1px solid var(--border-subtle);
+  padding: 28px 0 32px;
+  border-top: 1px solid var(--border-soft);
 }
 
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 24px;
+  gap: 12px 28px;
   justify-content: space-between;
   align-items: center;
 }
@@ -21,11 +21,10 @@
 
 .footer a:hover {
   color: var(--text-secondary);
-  text-decoration: underline;
 }
 
 .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 18px;
 }
