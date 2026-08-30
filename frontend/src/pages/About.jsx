@@ -6,44 +6,58 @@ export default function About() {
       <header className="static-header">
         <h1>Sobre el proyecto</h1>
         <p>
-          TraceID es un proyecto educativo relacionado con ciudadanía digital,
-          identidad digital, ciberseguridad, inteligencia artificial, privacidad
-          y OSINT ético.
+          TraceID es una herramienta web de verificación de imágenes: analiza
+          señales compatibles con contenido generado por IA, busca coincidencias
+          públicas en Internet y organiza la huella digital visible de una foto.
         </p>
       </header>
 
       <section className="glass static-card">
-        <h2>Objetivo</h2>
+        <h2>Qué es</h2>
         <p>
-          El objetivo de TraceID no es investigar personas, sino enseñar a
-          reconocer cómo una imagen puede dejar una huella pública en Internet.
+          El proyecto nació en un contexto educativo y hoy se mantiene como
+          iniciativa independiente. No está pensado para espiar personas ni para
+          armar perfiles privados: trabaja solo con lo que ya es accesible en
+          fuentes públicas y deja claro que los resultados son orientativos.
         </p>
-        <p style={{ marginTop: '0.75rem' }}>
-          En un mundo donde las fotografías circulan, se reutilizan y a veces se
-          generan sintéticamente, es importante desarrollar una mirada crítica
-          sobre la autenticidad y la trazabilidad pública de las imágenes.
+        <p style={{ marginTop: '0.85rem' }}>
+          Sirve para quien quiera comprobar si una imagen parece sintética, si
+          circula en la web o qué rastros públicos deja, con un lenguaje de
+          probabilidad en lugar de certezas absolutas.
         </p>
       </section>
 
       <section className="glass static-card">
-        <h2>Temas que aborda</h2>
+        <h2>Enfoque</h2>
         <ul className="check-list">
-          <li><strong>Ciudadanía digital</strong> — comprender los rastros que dejamos en línea.</li>
-          <li><strong>Identidad digital</strong> — cómo las imágenes se asocian a perfiles públicos.</li>
-          <li><strong>Ciberseguridad</strong> — verificación de autenticidad y detección de manipulación.</li>
-          <li><strong>Inteligencia artificial</strong> — límites y capacidades de los detectores de contenido sintético.</li>
-          <li><strong>Privacidad</strong> — distinción entre información pública y privada.</li>
-          <li><strong>OSINT ético</strong> — uso responsable de fuentes abiertas sin invadir la privacidad.</li>
+          <li>
+            <strong>Autenticidad</strong> — estimación de señales asociadas a
+            generación o manipulación por IA.
+          </li>
+          <li>
+            <strong>Búsqueda inversa</strong> — coincidencias indexadas en
+            Internet a partir de la propia imagen.
+          </li>
+          <li>
+            <strong>Huella pública</strong> — dominios, páginas y posibles
+            perfiles solo cuando aparecen en resultados públicos.
+          </li>
+          <li>
+            <strong>Privacidad por diseño</strong> — sin reconocimiento facial
+            automático, sin acceso a cuentas privadas y sin afirmar identidades
+            con certeza.
+          </li>
         </ul>
       </section>
 
       <section className="glass static-card">
-        <h2>Limitaciones</h2>
+        <h2>Límites</h2>
         <p>
-          TraceID es una herramienta de demostración y aprendizaje. Los detectores
-          de IA no son infalibles. Las búsquedas inversas dependen de lo que los
-          motores de búsqueda hayan indexado. Ningún resultado debe tomarse como
-          prueba definitiva de identidad o autenticidad.
+          Los detectores de IA fallan. La búsqueda inversa depende de lo que los
+          motores hayan indexado. Una coincidencia visual no prueba que dos
+          perfiles sean la misma persona. TraceID no reemplaza pericias formales
+          ni investigaciones oficiales: es una ayuda para mirar con más cuidado
+          lo que ya está a la vista en la red.
         </p>
       </section>
     </div>
