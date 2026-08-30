@@ -51,7 +51,7 @@ export default function Home() {
         <section className="hero anim anim-1">
           <div className="hero-badge">
             <Shield size={14} />
-            <span>Herramienta educativa de ciberseguridad</span>
+            <span>Trace-ID :shield:</span>
           </div>
           <h1>¿Esta imagen es realmente lo que parece?</h1>
           <p className="hero-desc">
