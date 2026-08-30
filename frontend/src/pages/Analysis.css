@@ -1,109 +1,51 @@
 .analysis-page {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
+  padding: 2.5rem 0 4rem;
 }
 
-.analysis-card {
-  width: 100%;
-  max-width: 640px;
-  padding: 2.5rem 2rem;
+.analysis-page h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 0.5rem;
 }
 
-.analysis-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.analysis-header h2 {
-  margin: 1rem 0 0.5rem;
-  font-size: 1.4rem;
-}
-
-.analysis-header p {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.spinner {
-  color: var(--accent);
-  animation: spin 1s linear infinite;
-  margin: 0 auto;
-}
-
-.stages {
+.analysis-steps {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.85rem;
+  margin: 1.75rem 0;
 }
 
-.stage {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  padding: 1rem 1.15rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid transparent;
-  opacity: 0.4;
-  transition: all 0.4s ease;
-  position: relative;
-}
-
-.stage.active {
-  opacity: 1;
-  background: rgba(56, 189, 248, 0.06);
-  border-color: var(--border-accent);
-}
-
-.stage.current {
-  box-shadow: 0 0 0 1px var(--accent-glow);
-}
-
-.stage-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(56, 189, 248, 0.12);
+.analysis-step {
+  padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--accent);
+  gap: 1rem;
 }
 
-.stage-text h3 {
-  font-size: 0.95rem;
-  margin-bottom: 0.25rem;
+.analysis-step .num {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.35);
+  min-width: 2rem;
 }
 
-.stage-text p {
-  color: var(--text-secondary);
-  font-size: 0.82rem;
-  line-height: 1.45;
+.analysis-step.active .num {
+  color: #fff;
 }
 
-.stage-pulse {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 1.2s ease infinite;
+.analysis-step.done {
+  opacity: 0.7;
 }
 
-.error-card {
-  text-align: center;
-}
-
-.error-card h2 {
-  margin-bottom: 0.75rem;
-  color: var(--danger);
-}
-
-.error-card p {
-  color: var(--text-secondary);
+.analysis-preview {
+  max-width: 320px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   margin-bottom: 1.5rem;
+}
+
+.analysis-preview img {
+  width: 100%;
+  display: block;
 }

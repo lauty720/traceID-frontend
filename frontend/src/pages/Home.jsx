@@ -59,7 +59,7 @@ export default function Home() {
           <Shield size={14} />
           <span>Herramienta educativa de ciberseguridad</span>
         </div>
-        <h1>¿Esta imagen es realmente lo que parece?</h1>
+        <h1 className="text-glow">¿Esta imagen es realmente lo que parece?</h1>
         <p className="hero-desc">
           Analizá una imagen para detectar posibles contenidos generados por IA,
           encontrar dónde aparece públicamente en Internet y descubrir coincidencias
