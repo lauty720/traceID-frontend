@@ -1,11 +1,10 @@
 .static-page {
-  padding: 2.75rem 0 3.5rem;
+  padding: 3rem 0 4rem;
 }
 
 .static-header {
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
   max-width: 40rem;
-  animation: fadeUp 0.7s var(--ease-out) both;
 }
 
 .static-header h1 {
@@ -17,31 +16,26 @@
 }
 
 .static-header p {
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.65;
 }
 
 .static-card {
-  padding: 1.65rem 1.45rem;
-  margin-bottom: 1.1rem;
-  animation: fadeUp 0.75s var(--ease-out) both;
+  padding: 1.75rem 1.5rem;
+  margin-bottom: 1.25rem;
 }
-
-.static-card:nth-child(2) { animation-delay: 0.08s; }
-.static-card:nth-child(3) { animation-delay: 0.16s; }
-.static-card:nth-child(4) { animation-delay: 0.24s; }
 
 .static-card h2 {
   font-family: var(--font-display);
-  font-size: 1.45rem;
-  margin-bottom: 0.6rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.65rem;
 }
 
 .static-card p,
 .static-card li {
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.95rem;
   line-height: 1.65;
 }
