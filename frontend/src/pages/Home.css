@@ -1,27 +1,28 @@
-/* —— Home layout: aire + dos columnas en desktop —— */
-
 .home {
-  padding-top: 48px;
-  padding-bottom: 72px;
+  padding: 56px 0 88px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .home {
-    padding-top: 64px;
-    padding-bottom: 96px;
+    padding: 72px 0 120px;
   }
 }
 
-/* Hero */
-.hero {
-  margin-bottom: 40px;
-  max-width: 640px;
-  animation: fadeUp 0.6s var(--ease) both;
+/* Two-column hero + upload */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 56px;
 }
 
-@media (min-width: 900px) {
-  .hero {
-    margin-bottom: 48px;
+@media (min-width: 960px) {
+  .home-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    margin-bottom: 72px;
   }
 }
 
@@ -29,69 +30,91 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 20px;
-  padding: 6px 14px;
+  margin-bottom: 24px;
+  padding: 6px 12px;
   font-size: 12px;
   font-weight: 500;
-  color: var(--accent);
+  color: #93c5fd;
   background: var(--accent-soft);
-  border: 1px solid rgba(79, 140, 255, 0.25);
+  border: 1px solid rgba(59, 130, 246, 0.22);
   border-radius: 999px;
 }
 
 .hero h1 {
-  font-size: clamp(1.85rem, 4.2vw, 2.75rem);
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
   font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.15;
-  margin-bottom: 18px;
-  color: var(--text);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  max-width: 14ch;
 }
 
 .hero-desc {
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-secondary);
-  max-width: 36rem;
+  margin-bottom: 28px;
+  max-width: 34rem;
 }
 
-/* Upload block */
+.hero-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.hero-points li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
 .upload-section {
-  padding: 28px;
-  margin-bottom: 48px;
-  animation: fadeUp 0.65s var(--ease) 0.08s both;
+  padding: 24px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .upload-section {
-    padding: 36px;
-    margin-bottom: 56px;
+    padding: 28px;
   }
 }
 
 .dropzone {
-  border: 1.5px dashed var(--border);
-  border-radius: var(--radius-lg);
-  padding: 40px 24px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 36px 20px;
   text-align: center;
   cursor: pointer;
-  background: var(--bg);
+  background: rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
   transition:
     border-color 0.25s ease,
     background 0.25s ease,
-    transform 0.3s var(--ease);
-  margin-bottom: 20px;
+    box-shadow 0.3s ease;
 }
 
 .dropzone:hover,
 .dropzone.drag-over {
   border-color: var(--accent);
   background: var(--accent-soft);
-  transform: scale(1.005);
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.15), 0 0 32px rgba(59, 130, 246, 0.08);
 }
 
 .dropzone.has-preview {
-  padding: 16px;
+  padding: 12px;
   cursor: default;
 }
 
@@ -99,42 +122,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .drop-icon {
   color: var(--text-muted);
-  margin-bottom: 8px;
-  transition: color 0.25s ease, transform 0.35s var(--ease);
+  margin-bottom: 6px;
+  transition: color 0.25s, transform 0.35s var(--ease);
 }
 
 .dropzone:hover .drop-icon {
   color: var(--accent);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .drop-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text);
   margin: 0;
 }
 
 .drop-or {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-muted);
-  margin: 4px 0;
+  margin: 2px 0;
 }
 
 .drop-formats {
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: 12px;
   color: var(--text-muted);
 }
 
 .preview-wrap {
-  position: relative;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   overflow: hidden;
   background: #000;
   border: 1px solid var(--border);
@@ -142,13 +164,12 @@
 
 .preview-wrap img {
   width: 100%;
-  max-height: 320px;
+  max-height: 280px;
   object-fit: contain;
-  margin: 0 auto;
 }
 
 .change-btn {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .error-msg {
@@ -160,72 +181,61 @@
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.analyze-btn {
-  min-width: 160px;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
 .privacy-notice {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 12.5px;
+  line-height: 1.55;
   color: var(--text-muted);
-  padding-top: 4px;
-  border-top: 1px solid var(--border-soft);
-  margin-top: 4px;
   padding-top: 16px;
+  border-top: 1px solid var(--border);
 }
 
-/* Features grid */
 .features {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 720px) {
   .features {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
 }
 
 .feature {
   padding: 24px;
-  animation: fadeUp 0.6s var(--ease) both;
 }
 
-.feature:nth-child(1) { animation-delay: 0.12s; }
-.feature:nth-child(2) { animation-delay: 0.2s; }
-.feature:nth-child(3) { animation-delay: 0.28s; }
-
 .feature-icon {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   background: var(--accent-soft);
-  color: var(--accent);
+  color: #60a5fa;
   margin-bottom: 16px;
-  transition: transform 0.35s var(--ease);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s ease;
 }
 
 .feature:hover .feature-icon {
-  transform: scale(1.08);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
 }
 
 .feature h3 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 .feature p {
-  font-size: 13.5px;
+  font-size: 13px;
   line-height: 1.55;
   color: var(--text-muted);
   margin: 0;
