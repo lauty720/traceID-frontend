@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Upload, Image as ImageIcon, Shield, Search, Fingerprint, Play } from 'lucide-react'
+import { Upload, Image as ImageIcon, Shield, Search, Fingerprint } from 'lucide-react'
 import { getToken } from '../services/auth'
 import './Home.css'
 
@@ -43,10 +43,6 @@ export default function Home() {
       return
     }
     navigate('/analisis', { state: { file, preview, demo: false } })
-  }
-
-  const onDemo = () => {
-    navigate('/analisis', { state: { file: null, preview: null, demo: true } })
   }
 
   return (
@@ -138,10 +134,6 @@ export default function Home() {
             >
               <Search size={18} />
               Analizar imagen
-            </button>
-            <button type="button" className="btn btn-secondary" onClick={onDemo}>
-              <Play size={18} />
-              Probar demo
             </button>
           </div>
 
