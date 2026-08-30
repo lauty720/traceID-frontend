@@ -9,6 +9,7 @@ import Ethics from './pages/Ethics'
 import About from './pages/About'
 import Privacy from './pages/Privacy'
 import Login from './pages/Login'
+import Admin from './pages/Admin'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/privacidad" element={<Privacy />} />
           <Route path="/sobre" element={<About />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>
       <Footer />
