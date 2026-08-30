@@ -1,33 +1,40 @@
 .results-page {
-  padding: 2.5rem 0 4rem;
+  padding: 2.25rem 0 3.5rem;
 }
 
 .results-page h1 {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   margin-bottom: 0.35rem;
+  animation: fadeUp 0.7s var(--ease-out) both;
 }
 
 .results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
 }
 
 .results-card {
-  padding: 1.35rem 1.25rem;
+  padding: 1.35rem 1.2rem;
+  animation: fadeUp 0.75s var(--ease-out) both;
 }
+
+.results-card:nth-child(1) { animation-delay: 0.05s; }
+.results-card:nth-child(2) { animation-delay: 0.12s; }
+.results-card:nth-child(3) { animation-delay: 0.2s; }
+.results-card:nth-child(4) { animation-delay: 0.28s; }
 
 .results-card h2 {
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  margin-bottom: 0.65rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
 }
 
 .results-card p,
 .results-card li {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.58);
   font-size: 0.9rem;
   line-height: 1.55;
 }
@@ -43,5 +50,5 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
 }
