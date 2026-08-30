@@ -53,7 +53,7 @@ export default function About() {
       <section className="glass static-card">
         <h2>Límites</h2>
         <p>
-          Los detectores de IA fallan. La búsqueda inversa depende de lo que los
+          Los detectores de IA pueden fallar. La búsqueda inversa depende de lo que los
           motores hayan indexado. Una coincidencia visual no prueba que dos
           perfiles sean la misma persona. TraceID no reemplaza pericias formales
           ni investigaciones oficiales: es una ayuda para mirar con más cuidado
