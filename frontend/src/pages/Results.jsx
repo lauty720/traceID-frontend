@@ -184,7 +184,7 @@ export default function Results() {
             <div className="auth-meta">
               <p className="auth-label">Probabilidad de contenido generado por IA</p>
               <p className="auth-conf">
-                Confianza: <strong>{confLabel[image_analysis?.confidence] || image_analysis?.confidence}</strong>
+                 <strong>{confLabel[image_analysis?.confidence] || image_analysis?.confidence}</strong>
               </p>
             </div>
           </div>
