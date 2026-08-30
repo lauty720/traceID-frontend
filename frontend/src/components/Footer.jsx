@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container footer-inner">
         <div className="footer-brand">
           <strong>TraceID</strong>
-          <p>Herramienta educativa de ciberseguridad y huella digital.</p>
+          <p>Herramienta para garantizar una mejor ciberseguridad.</p>
         </div>
         <div className="footer-links">
           <Link to="/privacidad">Política de privacidad</Link>
