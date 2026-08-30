@@ -182,7 +182,7 @@ export default function Results() {
           <div className="auth-visual">
             <CircularProgress value={image_analysis?.ai_probability ?? 0} />
             <div className="auth-meta">
-              <p className="auth-label">Probabilidad de contenido generado por IA</p>
+              <p className="auth-label">Probabilidad de contenido generado por IA:</p>
               <p className="auth-conf">
                  <strong>{confLabel[image_analysis?.confidence] || image_analysis?.confidence}</strong>
               </p>
