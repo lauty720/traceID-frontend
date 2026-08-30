@@ -1,4 +1,4 @@
-name = "trace-id"
+name = "traceid-frontend"
 compatibility_date = "2026-08-20"
 
 [assets]
