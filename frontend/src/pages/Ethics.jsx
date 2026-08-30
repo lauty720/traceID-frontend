@@ -8,7 +8,7 @@ export default function Ethics() {
         <h1>Ética y privacidad</h1>
         <p>
           TraceID fue diseñado como una herramienta que aumente tu seguridad digital
-          en tiempos donde es complejo saber si un perfil es real o no
+          en tiempos donde es complejo saber si un perfil es real o no.
         </p>
       </header>
 
